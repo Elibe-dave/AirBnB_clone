@@ -34,7 +34,6 @@ class BaseModel():
             storage.new(self)
 
     def __str__(self):
-        
         """Provides a human-readable string representation for an object.
 
         Returns:
@@ -44,6 +43,7 @@ class BaseModel():
         s_id = self.id
         s_dict = str(self.__dict__)
         return "[{}] ({}) {}".format(s_name, s_id, s_dict)
+
     def save(self):
         """Updates the object's timestamp and persists
         the data into the JSON file.
