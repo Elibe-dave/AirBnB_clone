@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """This is the  BaseModel for the AirBnB Project."""
 import uuid
-import models
+from models import storage
 from datetime import datetime
 
 
