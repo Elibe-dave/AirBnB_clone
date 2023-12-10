@@ -5,6 +5,7 @@ CLI console for the AirBNB program
 import cmd
 from models import storage
 from models.base_model import BaseModel
+from models.user import User
 from models.engine.file_storage import FileStorage
 
 
@@ -15,7 +16,7 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
 
     CLASSES = [
-            "BaseModel"
+            "BaseModel","user"
             ]
 
     def do_create(self, line):
@@ -31,6 +32,8 @@ class HBNBCommand(cmd.Cmd):
         else:
             if args[0] == "BaseModel":
                 base = BaseModel()
+            elif args[0] == "User":
+                base = User()
             print(base.id)
             storage.save()
 
