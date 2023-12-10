@@ -1,6 +1,6 @@
 #!/user/bin/python3
 """
-Module to hold class state
+Module to hold class State
 """
 
 
@@ -9,7 +9,7 @@ from .base_model import BaseModel
 
 class state(BaseModel):
     """
-    class representing a state
+    class representing a State
     """
 
     name = ""
