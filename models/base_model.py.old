@@ -9,6 +9,7 @@ class BaseModel():
     """class to define all common attributes/methods"""
     def __init__(self, *args, **kwargs):
         """Initialiazes an instace of BaseModel.
+
         Arguments:
             *args (tuple): Arguments from instance initialization.
             **kwargs (dictionary): Arguments as key-value pairs.
@@ -33,8 +34,8 @@ class BaseModel():
             storage.new(self)
 
     def __str__(self):
-
         """Provides a human-readable string representation for an object.
+
         Returns:
             A string containing the object's class name, ID, and attributes.
         """
@@ -44,7 +45,6 @@ class BaseModel():
         return "[{}] ({}) {}".format(s_name, s_id, s_dict)
 
     def save(self):
-
         """Updates the object's timestamp and persists
         the data into the JSON file.
         """
