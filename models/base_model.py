@@ -22,19 +22,8 @@ for the AirBnB Project.
             Creates an ID, and is updated with the time and date it was created
             or updated along with any other instance attribute
         """
-<<<<<<< HEAD
         if kwargs:
             # Added the variables because they are compulsory attributes
-=======
-        if len(kwargs) > 0:
-            for key, value in kwargs.items():
-                if key != '_class_':
-                    if key == 'created_at' or key == 'updated_at':
-                        self._dict_[key] = datetime.fromisoformat(value)
-                    else:
-                        self._dict_[key] = value
-                    else:
->>>>>>> 42820fa477080a703a1f7effef3defe54b9df644
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
