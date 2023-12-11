@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Test Case for User class Module
+"""User Class Module unit test
 """
 import unittest
 from datetime import datetime
@@ -7,10 +7,10 @@ from models.user import User
 
 
 class TestUser(unittest.TestCase):
-    """Test for Base Model
+    """Base Model test
     """
     def test_init_no_arg(self):
-        """Tests creation without arguments
+        """create user with no arguments
         """
         tmp = User()
         n_list = []
@@ -23,9 +23,9 @@ class TestUser(unittest.TestCase):
         self.assertEqual(n_list, check_list)
 
     def test_init_kwargs_args(self):
-        """Tests user creation with kwargs
+        """create user with kwargs arguments
         """
-        tmp_wa = User(name='segun', age=23, time='now')
+        tmp_wa = User(name='wina', age=26, time='now')
         n_list_wa = []
         check_list_wa = [
                 'id', 'created_at', 'updated_at',
@@ -36,9 +36,9 @@ class TestUser(unittest.TestCase):
         self.assertEqual(n_list_wa, check_list_wa)
 
     def test_init_args_args(self):
-        """Tests user creation with args
+        """create user with args arguments
         """
-        tmp_args = User(15, "new", "anything", 36.50)
+        tmp_args = User(16, "new", "anything", 36.50)
         nlist_args = []
         check_list = [
                 'id', 'created_at',
@@ -49,9 +49,9 @@ class TestUser(unittest.TestCase):
         self.assertEqual(nlist_args, check_list)
 
     def test_init_args_and_kwargs(self):
-        """Tests user creation with args and kwargs
+        """create user with args and kwargs
         """
-        tmp_args_kwargs = User("every", "new", 26, name="danny", age=16)
+        tmp_args_kwargs = User("every", "new", 26, name="wina", age=16)
         list_ak = []
         check_list = [
                 'id', 'created_at', 'updated_at',
@@ -71,7 +71,7 @@ class TestUser(unittest.TestCase):
 
     def test_email_attribute(self):
         """
-        Test attributes
+        Test class attributes
         """
         usr = User()
         self.assertEqual(usr.email, "")

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Unittests for amenity class
+amenity unit tests
 """
 import unittest
 from models.engine.file_storage import FileStorage
@@ -8,11 +8,11 @@ from models.engine.file_storage import FileStorage
 
 class TestAmenity(unittest.TestCase):
     """
-    Test cases for Amenity class
+    Amenity class tests
     """
     def test_amenity_obj(self):
         """
-        Test creation of amenity
+        Test amenity creation
         """
         from models.amenity import Amenity
         obj = Amenity()

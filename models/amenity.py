@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-"""Module for Amenity
+"""Amenity class module
 """
 from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
-    """Class for Amenity
-    Arguments:
-        name (str)
+    """Amenitiy Class Module
     """
     name = ""

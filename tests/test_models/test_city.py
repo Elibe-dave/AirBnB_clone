@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Unittests for city classes
+city unit test
 """
 import unittest
 from models.engine.file_storage import FileStorage
@@ -8,11 +8,11 @@ from models.engine.file_storage import FileStorage
 
 class TestCity(unittest.TestCase):
     """
-    Test cases for City class
+    City class unit test
     """
     def test_city_obj(self):
         """
-        Test creation of city instance
+        Test City creation
         """
         from models.city import City
         obj = City()

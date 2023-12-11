@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-serialization and deserialization class module
+This module defines a class for data
+serialization and deserialization
 """
 import json
 from os import path
@@ -8,24 +9,34 @@ from os import path
 
 class FileStorage():
     """
-    serialization and deserialization method
+    Provides methods for data serialization and deserialization
     """
     __file_path = "file.json"
     __objects = {}
 
     def all(self):
         """
-        Gets and returns dictionary of objects
+        Gets dictionary of objects
+
+        Return:
+            dict: dictionary of objects
         """
         return (FileStorage.__objects)
 
     def new(self, obj):
-        """Add object to a dictionary"""
+        """
+        Adds an object to a dictionary
+
+        Args:
+            obj (object): the object to be added
+        """
         classname_id = type(obj).__name__ + "." + str(obj.id)
         FileStorage.__objects[classname_id] = obj
 
     def save(self):
-        """Saves dictionary to a file"""
+        """
+        Saves dictionary of objects to a file
+        """
         obj_dict = {}
         for key, value in FileStorage.__objects.items():
             obj_dict[key] = value.to_dict()
@@ -33,7 +44,9 @@ class FileStorage():
             file.write(json.dumps(obj_dict))
 
     def reload(self):
-        """Reloads dictionary from a file"""
+        """
+        Reloads dictionary of objects from a file
+        """
         if path.isfile(FileStorage.__file_path):
             obj_dict = {}
             with open(FileStorage.__file_path, mode="r") as file:

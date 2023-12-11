@@ -21,14 +21,13 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
 
     CLASSES = [
-            "BaseModel", "user",  "State",
+            "BaseModel", "User", "State",
             "Amenity", "Place", "City", "Review"
             ]
 
     def do_create(self, line):
         """
-        Create object instance
-        Usage create <object>
+        Creates an object instance
         """
         args = line.split(" ")
         if line == "":
@@ -39,15 +38,15 @@ class HBNBCommand(cmd.Cmd):
             if args[0] == "BaseModel":
                 base = BaseModel()
             elif args[0] == "User":
-                base = User(
+                base = User()
             elif args[0] == "State":
                 base = State()
-            elif args[0] == "City":
-                base = City()
             elif args[0] == "Amenity":
                 base = Amenity()
             elif args[0] == "Place":
                 base = Place()
+            elif args[0] == "City":
+                base = City()
             elif args[0] == "Review":
                 base = Review()
             print(base.id)
@@ -55,8 +54,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, line):
         """
-        Print (show) string rep instance
-        Usage: show <object> <id>
+        Print an instance string rep
         """
         objs = storage.all()
         args = line.split(" ")
@@ -77,8 +75,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, line):
         """
-        Destroy (delete) an instance
-        Usage: destroy <object> <id>
+        Destroy an instance
         """
         objs = storage.all()
         args = line.split(" ")
@@ -100,8 +97,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, line):
         """
-        Prints all string rep instance
-        Usage: all <object> | all
+        Print all string rep of instance
         """
         objs = storage.all()
         args = line.split(" ")
@@ -122,8 +118,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, line):
         """
-        Updates an instance
-        Usage: update <class name> <id> <attribute name> "<attribute value>"
+        Update an instance
         """
         objs = storage.all()
         args = line.split(" ")
@@ -180,7 +175,7 @@ class HBNBCommand(cmd.Cmd):
 
     def default(self, line):
         """
-        other command handling ex.:
+        other CL handlers for commands like:
             <class name>.all()
             <class name>.count()
         """
@@ -200,21 +195,21 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, line):
         """
-        Ends the CLI
+        End of CLI
         Usage: CTRL+D
         """
         return True
 
     def do_quit(self, line):
         """
-        Ends the CLI
+        End OF CLI
         Usage: quit
         """
         return True
 
     def emptyline(self):
         """
-        Ignores blank lines (ENTER)
+        Ignore blank lines (ENTER)
         """
         pass
 

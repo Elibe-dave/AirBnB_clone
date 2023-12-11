@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-Place module
+Place class module
 """
 from models.base_model import BaseModel
 
 
 class Place(BaseModel):
     """
-    Defines attributes for Place object
+    Place class module object
     """
     city_id = ""
     user_id = ""

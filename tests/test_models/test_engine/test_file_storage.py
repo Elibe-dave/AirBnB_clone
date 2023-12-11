@@ -9,11 +9,11 @@ from models.engine.file_storage import FileStorage
 
 class TestFileStorage(TestCase):
     """
-    File Storage class tests
+    File Storage class module unit test
     """
 
     def test_reload(self):
-        """Test the reload"""
+        """ reload method test """
         obj = FileStorage()
         objects = obj.all()
         self.assertTrue(len(objects) > 0)

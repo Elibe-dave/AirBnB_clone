@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Defines unit tests for the Amenity class
+BaseModel unit test
 """
 from unittest import TestCase
 from datetime import datetime
@@ -10,11 +10,11 @@ from os.path import isfile
 
 class TestBaseModel(TestCase):
     """
-    Test class with methods testing the Amenity class
+    BaseModel test
     """
 
     def test_save(self):
-        """ Test the save method """
+        """ save test """
         obj = BaseModel()
         updated_at = datetime.now()
         first_update = obj.updated_at
@@ -29,7 +29,7 @@ class TestBaseModel(TestCase):
         self.assertLess(first_update, second_update, "Error")
 
     def test_to_dict(self):
-        """ Test the to_dict method """
+        """ to_dict test """
         expected = ("id", "created_at", "updated_at", "__class__")
         obj = BaseModel()
         actual = obj.to_dict()

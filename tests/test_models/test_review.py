@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Unittests for review class
+review unit test
 """
 import unittest
 from models.engine.file_storage import FileStorage
@@ -8,11 +8,11 @@ from models.engine.file_storage import FileStorage
 
 class TestReview(unittest.TestCase):
     """
-    Test cases for Review class
+    Review class unit test
     """
     def test_review_obj(self):
         """
-        Test review creation
+        Test Review creation
         """
         from models.review import Review
         obj = Review()

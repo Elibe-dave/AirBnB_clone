@@ -7,7 +7,7 @@ from models.base_model import BaseModel
 
 class City(BaseModel):
     """
-    Defines attributes for City object
+    set city class  attributes
     """
     state_id = ""
     name = ""

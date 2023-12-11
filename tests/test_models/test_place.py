@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Unittests for place class
+place unit test
 """
 import unittest
 from models.engine.file_storage import FileStorage
@@ -8,11 +8,11 @@ from models.engine.file_storage import FileStorage
 
 class TestPlace(unittest.TestCase):
     """
-    Test cases for Place class
+    Place class unit test
     """
     def test_place_obj(self):
         """
-        Test place creation
+        Test Place creation
         """
         from models.place import Place
         obj = Place()
