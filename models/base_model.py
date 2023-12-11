@@ -14,7 +14,14 @@ class BaseModel():
             *args (tuple): Arguments from instance initialization.
             **kwargs (dictionary): Arguments as key-value pairs.
         """
-        if kwargs:
+        if len(kwargs) > 0:
+            for key, value in kwargs.items():
+                if key != '_class_':
+                    if key == 'created_at' or key == 'updated_at':
+                        self._dict_[key] = datetime.fromisoformat(value)
+                    else:
+                        self._dict_[key] = value
+                    else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
